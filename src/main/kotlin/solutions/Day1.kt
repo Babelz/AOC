@@ -14,14 +14,17 @@ class Day1 : Solution {
     override fun run() {
         val lines = File("input/Day1").readLines()
 
-        val result = listOf(0).plus(lines.indices.filter {
+        val result = listOf(-1).plus(lines.indices.filter {
             lines[it].isNullOrEmpty()
-        }).maxOfOrNull {
-            lines.subList(it + 1, lines.size).takeWhile { l ->
+        }).map { it + 1 }.dropLast(1).map {
+            lines.subList(it, lines.size).takeWhile { l ->
                 !l.isNullOrEmpty()
-            }.sumOf { l -> l.toInt() }
+            }.sumOf { l ->
+                l.toInt()
+            }
         }
 
-        println("Max calories: $result")
+        println("Max calories: ${result.max()}")
+        println("Total calories of top 3 elves: ${result.sortedDescending().subList(0, 3).sum()}")
     }
 }
