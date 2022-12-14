@@ -25,11 +25,6 @@ tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
 }
 
-tasks.register<Copy>("copyInput") {
-    from(layout.projectDirectory.dir("input"))
-    into(layout.buildDirectory.dir("input"))
-}
-
 application {
     mainClass.set("MainKt")
 }
