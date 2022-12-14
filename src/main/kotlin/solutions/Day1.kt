@@ -6,7 +6,7 @@ import java.io.File
 import java.io.FileReader
 
 /**
- * Advent of code 2022 day 1 solution class.
+ * Advent of code 2022 day 1 solution.
  *
  * https://adventofcode.com/2022/day/1
  */
